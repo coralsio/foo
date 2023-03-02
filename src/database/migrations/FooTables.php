@@ -21,7 +21,6 @@ class FooTables extends Migration
 
             $this->commonColumns($table);
         });
-
     }
 
     /**

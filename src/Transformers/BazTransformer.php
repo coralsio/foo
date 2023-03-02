@@ -25,10 +25,10 @@ class BazTransformer extends BaseTransformer
 
         $transformedArray = [
             'id' => $baz->id,
-            'name' =>$this->getModelLink($baz, $baz->name, ['data-size' => 'modal-lg']),
+            'name' => $this->getModelLink($baz, $baz->name, ['data-size' => 'modal-lg']),
             'created_at' => format_date($baz->created_at),
             'updated_at' => format_date($baz->updated_at),
-            'action' => $this->actions($baz)
+            'action' => $this->actions($baz),
         ];
 
         return parent::transformResponse($transformedArray);

@@ -8,7 +8,8 @@ use Spatie\Activitylog\Traits\LogsActivity;
 
 class Bar extends BaseModel
 {
-    use PresentableTrait, LogsActivity;
+    use PresentableTrait;
+    use LogsActivity;
 
     /**
      *  Model configuration.

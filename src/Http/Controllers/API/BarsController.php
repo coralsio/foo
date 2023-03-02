@@ -47,6 +47,7 @@ class BarsController extends APIBaseController
     {
         try {
             $bar = $this->barService->store($request, Bar::class);
+
             return apiResponse($this->barService->getModelDetails(), trans('Corals::messages.success.created', ['item' => $bar->name]));
         } catch (\Exception $exception) {
             return apiExceptionResponse($exception);

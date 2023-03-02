@@ -20,7 +20,6 @@ class FooServiceProvider extends ServiceProvider
      *
      * @return void
      */
-
     public function boot()
     {
         // Load view
@@ -33,7 +32,6 @@ class FooServiceProvider extends ServiceProvider
 //        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
 
         $this->registerCustomFieldsModels();
-
     }
 
     /**
