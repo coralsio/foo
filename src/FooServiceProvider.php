@@ -2,24 +2,18 @@
 
 namespace Corals\Modules\Foo;
 
-use Corals\Foundation\Providers\BasePackageServiceProvider;
 use Corals\Modules\Foo\Facades\Foo;
 use Corals\Modules\Foo\Models\Bar;
 use Corals\Modules\Foo\Providers\FooAuthServiceProvider;
 use Corals\Modules\Foo\Providers\FooObserverServiceProvider;
 use Corals\Modules\Foo\Providers\FooRouteServiceProvider;
-use Corals\Settings\Facades\Modules;
 use Corals\Settings\Facades\Settings;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 
-class FooServiceProvider extends BasePackageServiceProvider
+class FooServiceProvider extends ServiceProvider
 {
     protected $defer = true;
-    /**
-     * @var
-     */
-    protected $packageCode = 'corals-foo';
 
     /**
      * Bootstrap the application events.
@@ -27,7 +21,7 @@ class FooServiceProvider extends BasePackageServiceProvider
      * @return void
      */
 
-    public function bootPackage()
+    public function boot()
     {
         // Load view
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'Foo');
@@ -47,7 +41,7 @@ class FooServiceProvider extends BasePackageServiceProvider
      *
      * @return void
      */
-    public function registerPackage()
+    public function register()
     {
         $this->mergeConfigFrom(__DIR__ . '/config/foo.php', 'foo');
 
@@ -64,10 +58,5 @@ class FooServiceProvider extends BasePackageServiceProvider
     protected function registerCustomFieldsModels()
     {
         Settings::addCustomFieldModel(Bar::class);
-    }
-
-    public function registerModulesPackages()
-    {
-        Modules::addModulesPackages('corals/foo');
     }
 }
