@@ -2,17 +2,15 @@
 
 namespace Corals\Modules\Foo;
 
+use Corals\Foundation\Providers\BasePackageServiceProvider;
 use Corals\Modules\Foo\Facades\Foo;
 use Corals\Modules\Foo\Models\Bar;
 use Corals\Modules\Foo\Providers\FooAuthServiceProvider;
 use Corals\Modules\Foo\Providers\FooObserverServiceProvider;
 use Corals\Modules\Foo\Providers\FooRouteServiceProvider;
+use Corals\Settings\Facades\Modules;
 use Corals\Settings\Facades\Settings;
 use Illuminate\Foundation\AliasLoader;
-use Illuminate\Support\ServiceProvider;
-use Corals\Settings\Facades\Modules;
-use Corals\Foundation\Providers\BasePackageServiceProvider;
-
 
 class FooServiceProvider extends BasePackageServiceProvider
 {
