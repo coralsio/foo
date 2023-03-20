@@ -11,6 +11,7 @@ use Corals\Settings\Facades\Settings;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 use Corals\Settings\Facades\Modules;
+use Corals\Foundation\Providers\BasePackageServiceProvider;
 
 
 class FooServiceProvider extends BasePackageServiceProvider
