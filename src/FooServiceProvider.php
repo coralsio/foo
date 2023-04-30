@@ -10,21 +10,17 @@ use Corals\Modules\Foo\Providers\FooRouteServiceProvider;
 use Corals\Settings\Facades\Settings;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
-use Corals\Settings\Facades\Modules;
-use Corals\Foundation\Providers\BasePackageServiceProvider;
 
-
-class FooServiceProvider extends BasePackageServiceProvider
+class FooServiceProvider extends ServiceProvider
 {
     protected $defer = true;
-    protected $packageCode = 'corals-foo';
 
     /**
      * Bootstrap the application events.
      *
      * @return void
      */
-    public function bootPackage()
+    public function boot()
     {
         // Load view
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'Foo');
@@ -43,7 +39,7 @@ class FooServiceProvider extends BasePackageServiceProvider
      *
      * @return void
      */
-    public function registerPackage()
+    public function register()
     {
         $this->mergeConfigFrom(__DIR__ . '/config/foo.php', 'foo');
 
@@ -60,10 +56,5 @@ class FooServiceProvider extends BasePackageServiceProvider
     protected function registerCustomFieldsModels()
     {
         Settings::addCustomFieldModel(Bar::class);
-    }
-
-    public function registerModulesPackages()
-    {
-        Modules::addModulesPackages('corals/foo');
     }
 }
