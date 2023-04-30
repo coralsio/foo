@@ -7,6 +7,7 @@ use Corals\Modules\Foo\Models\Bar;
 use Corals\Modules\Foo\Providers\FooAuthServiceProvider;
 use Corals\Modules\Foo\Providers\FooObserverServiceProvider;
 use Corals\Modules\Foo\Providers\FooRouteServiceProvider;
+use Corals\Settings\Facades\Modules;
 use Corals\Settings\Facades\Settings;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
@@ -56,5 +57,10 @@ class FooServiceProvider extends ServiceProvider
     protected function registerCustomFieldsModels()
     {
         Settings::addCustomFieldModel(Bar::class);
+    }
+
+    public function registerModulesPackages()
+    {
+        Modules::addModulesPackages('corals/foo');
     }
 }
