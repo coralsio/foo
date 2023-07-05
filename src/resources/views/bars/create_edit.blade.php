@@ -18,7 +18,9 @@
             @component('components.box')
                 {!! CoralsForm::openForm($bar) !!}
                 <div class="row">
-                    {!! CoralsForm::text('name', 'Foo::attributes.bar.name' ,true,null) !!}
+                    <div class="col-md-4">
+                        {!! CoralsForm::text('name', 'Foo::attributes.bar.name' ,true,null) !!}
+                    </div>
                 </div>
 
                 {!! CoralsForm::customFields($bar) !!}
