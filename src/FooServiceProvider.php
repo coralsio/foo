@@ -25,7 +25,6 @@ class FooServiceProvider extends BasePackageServiceProvider
      *
      * @return void
      */
-
     public function bootPackage()
     {
         // Load view
