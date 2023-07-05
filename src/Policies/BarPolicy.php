@@ -9,6 +9,7 @@ use Corals\User\Models\User;
 class BarPolicy extends BasePolicy
 {
     protected $administrationPermission = 'Administrations::admin.foo';
+
     /**
      * @param User $user
      * @return bool
@@ -18,6 +19,7 @@ class BarPolicy extends BasePolicy
         if ($user->can('Foo::bar.view')) {
             return true;
         }
+
         return false;
     }
 
@@ -40,6 +42,7 @@ class BarPolicy extends BasePolicy
         if ($user->can('Foo::bar.update')) {
             return true;
         }
+
         return false;
     }
 
@@ -53,7 +56,7 @@ class BarPolicy extends BasePolicy
         if ($user->can('Foo::bar.delete')) {
             return true;
         }
+
         return false;
     }
-
 }

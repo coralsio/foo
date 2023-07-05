@@ -8,7 +8,8 @@ use Spatie\Activitylog\Traits\LogsActivity;
 
 class Baz extends BaseModel
 {
-    use PresentableTrait, LogsActivity;
+    use PresentableTrait;
+    use LogsActivity;
 
     /**
      *  Model configuration.

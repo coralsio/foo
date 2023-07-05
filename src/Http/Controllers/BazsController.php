@@ -46,7 +46,7 @@ class BazsController extends BaseController
         $baz = new Baz();
 
         $this->setViewSharedData([
-            'title_singular' => trans('Corals::labels.create_title', ['title' => $this->title_singular])
+            'title_singular' => trans('Corals::labels.create_title', ['title' => $this->title_singular]),
         ]);
 
         return view('Foo::bazs.create_edit')->with(compact('baz'));
@@ -62,7 +62,7 @@ class BazsController extends BaseController
             $baz = $this->bazService->store($request, Baz::class);
             $message = [
                 'level' => 'success',
-                'message' => trans('Corals::messages.success.created', ['item' => $this->title_singular])
+                'message' => trans('Corals::messages.success.created', ['item' => $this->title_singular]),
             ];
         } catch (\Exception $exception) {
             $message = ['level' => 'error', 'message' => $exception->getMessage()];
@@ -95,7 +95,7 @@ class BazsController extends BaseController
     public function edit(BazRequest $request, Baz $baz)
     {
         $this->setViewSharedData([
-            'title_singular' => trans('Corals::labels.update_title', ['title' => $baz->getIdentifier()])
+            'title_singular' => trans('Corals::labels.update_title', ['title' => $baz->getIdentifier()]),
         ]);
 
         return view('Foo::bazs.create_edit')->with(compact('baz'));
@@ -112,7 +112,7 @@ class BazsController extends BaseController
             $this->bazService->update($request, $baz);
             $message = [
                 'level' => 'success',
-                'message' => trans('Corals::messages.success.updated', ['item' => $this->title_singular])
+                'message' => trans('Corals::messages.success.updated', ['item' => $this->title_singular]),
             ];
         } catch (\Exception $exception) {
             $message = ['level' => 'error', 'message' => $exception->getMessage()];
@@ -134,7 +134,7 @@ class BazsController extends BaseController
 
             $message = [
                 'level' => 'success',
-                'message' => trans('Corals::messages.success.deleted', ['item' => $this->title_singular])
+                'message' => trans('Corals::messages.success.deleted', ['item' => $this->title_singular]),
             ];
         } catch (\Exception $exception) {
             log_exception($exception, Baz::class, 'destroy');

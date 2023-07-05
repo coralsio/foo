@@ -45,7 +45,7 @@ class BarsController extends BaseController
         $bar = new Bar();
 
         $this->setViewSharedData([
-            'title_singular' => trans('Corals::labels.create_title', ['title' => $this->title_singular])
+            'title_singular' => trans('Corals::labels.create_title', ['title' => $this->title_singular]),
         ]);
 
         return view('Foo::bars.create_edit')->with(compact('bar'));
@@ -91,7 +91,7 @@ class BarsController extends BaseController
     public function edit(BarRequest $request, Bar $bar)
     {
         $this->setViewSharedData([
-            'title_singular' => trans('Corals::labels.update_title', ['title' => $bar->getIdentifier()])
+            'title_singular' => trans('Corals::labels.update_title', ['title' => $bar->getIdentifier()]),
         ]);
 
         return view('Foo::bars.create_edit')->with(compact('bar'));
@@ -127,7 +127,7 @@ class BarsController extends BaseController
 
             $message = [
                 'level' => 'success',
-                'message' => trans('Corals::messages.success.deleted', ['item' => $this->title_singular])
+                'message' => trans('Corals::messages.success.deleted', ['item' => $this->title_singular]),
             ];
         } catch (\Exception $exception) {
             log_exception($exception, Bar::class, 'destroy');

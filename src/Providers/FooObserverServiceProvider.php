@@ -13,7 +13,6 @@ class FooObserverServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
         Bar::observe(BarObserver::class);
     }
 }

@@ -35,10 +35,9 @@ class FooServiceProvider extends BasePackageServiceProvider
         $this->loadTranslationsFrom(__DIR__ . '/resources/lang', 'Foo');
 
         // Load migrations
-//        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
+        //        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
 
         $this->registerCustomFieldsModels();
-
     }
 
     /**

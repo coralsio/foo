@@ -9,7 +9,7 @@ use Corals\Modules\Foo\database\seeds\FooDatabaseSeeder;
 class UninstallModuleServiceProvider extends BaseUninstallModuleServiceProvider
 {
     protected $migrations = [
-        FooTables::class
+        FooTables::class,
     ];
 
     protected function providerBooted()

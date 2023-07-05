@@ -22,11 +22,12 @@ class FooMenuDatabaseSeeder extends Seeder
             'description' => 'Foo Menu Item',
             'icon' => 'fa fa-globe',
             'target' => null, 'roles' => '["1","2"]',
-            'order' => 0
+            'order' => 0,
         ]);
 
         // seed children menu
-        \DB::table('menus')->insert([
+        \DB::table('menus')->insert(
+            [
                 [
                     'parent_id' => $foo_menu_id,
                     'key' => null,
@@ -36,7 +37,7 @@ class FooMenuDatabaseSeeder extends Seeder
                     'description' => 'Bars List Menu Item',
                     'icon' => 'fa fa-cube',
                     'target' => null, 'roles' => '["1"]',
-                    'order' => 0
+                    'order' => 0,
                 ],
             ]
         );

@@ -6,7 +6,6 @@ use Corals\Modules\Foo\Models\Bar;
 
 class BarObserver
 {
-
     /**
      * @param Bar $bar
      */

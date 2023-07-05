@@ -28,7 +28,7 @@ class BarTransformer extends BaseTransformer
             'name' => HtmlElement('a', ['href' => $bar->getShowURL()], $bar->name),
             'created_at' => format_date($bar->created_at),
             'updated_at' => format_date($bar->updated_at),
-            'action' => $this->actions($bar)
+            'action' => $this->actions($bar),
         ];
 
         return parent::transformResponse($transformedArray);
