@@ -23,10 +23,11 @@ new module from foo is created by the following command:
 ```php
 php artisan make:module :modeule_name :model_name
 ```
-###Example
 
----
+### Example
+```php
 php artisan make:module jobs job
+```
 
 - Jobs module that was created exist within the modules folder in corals folder
 - It is ready to work on
