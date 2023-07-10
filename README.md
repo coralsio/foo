@@ -37,6 +37,3 @@ php artisan make:module jobs job
 ```bash
 vendor/bin/phpunit vendor/corals/foo/tests 
 ```
-## Credits
-
-- [:author_name](https://github.com/:author_username)
